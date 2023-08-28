@@ -217,7 +217,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             <?php
                                             $getvariation = $mysqli->query("select * from products where productname = '$productname'");
                                             $resvariation = $getvariation->fetch_assoc();
-                                            echo $resvariation['variation1spec'];
+                                            echo $resvariation['variations'];
                                             ?>
                                         </td>
                                         <td class="py-1">

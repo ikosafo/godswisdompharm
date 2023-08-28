@@ -332,25 +332,6 @@ function getCompNameHeader($text)
                     <span class="menu-item text-truncate">View New Arrivals</span></a>
                 </li>
 
-              <?php }
-
-              $getpermission = $mysqli->query("select * from userpermission where userid = '$user_id' 
-                and permission = 'Categories, Subcategories and Variations'");
-              if (mysqli_num_rows($getpermission) == '1' || $perm == '1') { ?>
-
-                <li class="<?php echo ($_SERVER['PHP_SELF'] == "/addprodcategory.php" ? "active" : ""); ?>">
-                  <a class="d-flex align-items-center" href="addprodcategory"><i data-feather="circle"></i>
-                    <span class="menu-item text-truncate">Categories</span></a>
-                </li>
-                <li class="<?php echo ($_SERVER['PHP_SELF'] == "/addsubprodcategory.php" ? "active" : ""); ?>">
-                  <a class="d-flex align-items-center" href="addsubprodcategory"><i data-feather="circle"></i>
-                    <span class="menu-item text-truncate">Subcategories</span></a>
-                </li>
-                <li class="<?php echo ($_SERVER['PHP_SELF'] == "/variations.php" ? "active" : ""); ?>">
-                  <a class="d-flex align-items-center" href="variations"><i data-feather="circle"></i>
-                    <span class="menu-item text-truncate">Variations</span></a>
-                </li>
-
               <?php } ?>
 
             </ul>

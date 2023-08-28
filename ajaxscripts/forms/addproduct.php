@@ -52,7 +52,7 @@ $random = rand(1, 10) . date("Y-m-d");
       <input type="text" id="productname" class="form-control" placeholder="Product Name" />
     </div>
     <div class="mb-1 col-md-4">
-      <label class="form-label" for="quantitysale">Quantity</label>
+      <label class="form-label" for="quantity">Quantity</label>
       <input type="text" id="quantity" class="form-control" onkeypress="return isNumber(event)" placeholder="Quantity" />
     </div>
     <div class="mb-1 col-md-4">

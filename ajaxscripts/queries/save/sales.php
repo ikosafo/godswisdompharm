@@ -17,13 +17,13 @@ while ($resquantity = $getquantity->fetch_assoc()) {
 
     $getproduct = $mysqli->query("select * from products where prodid = '$prodid'");
     $resproduct = $getproduct->fetch_assoc();
-    $prodquantity = $resproduct['quantitysale'];
+    $prodquantity = $resproduct['quantity'];
     $newquantity = $prodquantity - $quantity;
 
     if ($newquantity < 0) {
         echo 2;
     } else {
-        $updatequantity = $mysqli->query("update products set quantitysale = '$newquantity' 
+        $updatequantity = $mysqli->query("update products set quantity = '$newquantity' 
         where prodid = '$prodid'");
         echo 1;
     }

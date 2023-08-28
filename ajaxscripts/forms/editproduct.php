@@ -57,7 +57,7 @@ $resdetails = $getdetails->fetch_assoc();
       <input type="text" id="productname" class="form-control" value="<?php echo $resdetails['productname']; ?>" placeholder="Product Name" />
     </div>
     <div class="mb-1 col-md-4">
-      <label class="form-label" for="quantitysale">Quantity</label>
+      <label class="form-label" for="quantity">Quantity</label>
       <input type="text" id="quantity" class="form-control" value="<?php echo $resdetails['quantity']; ?>" onkeypress="return isNumber(event)" placeholder="Quantity" />
     </div>
     <div class="mb-1 col-md-4">

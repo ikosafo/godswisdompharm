@@ -19,30 +19,27 @@ $searchQuery = " ";
 if ($searchValue != '') {
     $searchQuery = " and (productname like '%" . $searchValue . "%' or 
    expirydate like '%" . $searchValue . "%' or
-   quantitysale like '%" . $searchValue . "%' or 
-   quantitystock like '%" . $searchValue . "%' or
-   variation1spec like '%" . $searchValue . "%' or
-   variation2spec like '%" . $searchValue . "%' or
-   variation3spec like '%" . $searchValue . "%' or
-   sellingpricewhole like '%" . $searchValue . "%' or
+   quantity like '%" . $searchValue . "%' or 
+   variations like '%" . $searchValue . "%' or
+   sellingprice like '%" . $searchValue . "%' or
    username like '%" . $searchValue . "%') ";
 }
 
 ## Total number of records without filtering
 $sel = mysqli_query($mysqli, "select count(*) as allcount from 
-products where status IS NULL AND (productname LIKE '%$prodsearch%' or barcode LIKE '%$prodsearch%') LIMIT 20");
+products where status IS NULL AND productname LIKE '%$prodsearch%' LIMIT 20");
 $records = mysqli_fetch_assoc($sel);
 $totalRecords = $records['allcount'];
 
 ## Total number of record with filtering
 $sel = mysqli_query($mysqli, "select count(*) as allcount from products WHERE status IS NULL 
-                    AND (productname LIKE '%$prodsearch%' or barcode LIKE '%$prodsearch%') 
+                    AND productname LIKE '%$prodsearch%' 
                     AND 1 " . $searchQuery);
 $records = mysqli_fetch_assoc($sel);
 $totalRecordwithFilter = $records['allcount'];
 
 ## Fetch records
-$empQuery = "select * from products WHERE status IS NULL AND (productname LIKE '%$prodsearch%' or barcode LIKE '%$prodsearch%') LIMIT 20";
+$empQuery = "select * from products WHERE status IS NULL AND productname LIKE '%$prodsearch%' LIMIT 20";
 $empRecords = mysqli_query($mysqli, $empQuery);
 $data = array();
 
@@ -51,8 +48,8 @@ while ($row = mysqli_fetch_assoc($empRecords)) {
         "product" => getProdName($row['prodid']),
         "quantity" => getQuantity($row['prodid']),
         "expirydate" => getExpiryDate($row['expirydate']),
-        "sellingprice" => $row['sellingpricewhole'],
-        "variation" => $row['variation1spec'],
+        "sellingprice" => $row['sellingprice'],
+        "variations" => $row['variations'],
         "action" => getTempSales($row['prodid'])
     );
 }

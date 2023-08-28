@@ -81,7 +81,7 @@ if (mysqli_num_rows($gettemp) == "0") {
     <div class="col-md-12">
       <div class="mb-1 mt-5 row">
         <div class="col-sm-3">
-          <label class="col-form-label" for="barcode">Amount Paid</label>
+          <label class="col-form-label" for="amountpaid">Amount Paid</label>
         </div>
         <div class="col-sm-9">
           <input type="text" onkeypress="return isNumberKey(event)" id="amountpaid" class="form-control" autocomplete="off" placeholder="Enter amount paid" />
