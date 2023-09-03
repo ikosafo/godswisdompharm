@@ -493,7 +493,7 @@ function getCompNameHeader($text)
         // Get Permissions
 
         $getpermission = $mysqli->query("select * from userpermission where userid = '$user_id' 
-            and (permission = 'Categories, Add and View Expenses'
+            and (permission = 'Add and View Expenses'
             OR permission = 'Expenses Statistics'
             )");
         if (mysqli_num_rows($getpermission) > 0 || $perm == '1') { ?>
@@ -505,14 +505,9 @@ function getCompNameHeader($text)
               // Get Permissions
 
               $getpermission = $mysqli->query("select * from userpermission where userid = '$user_id' 
-            and permission = 'Categories, Add and View Expenses'");
+            and permission = 'Add and View Expenses'");
               if (mysqli_num_rows($getpermission) == '1' || $perm == '1') { ?>
 
-
-                <li class="<?php echo ($_SERVER['PHP_SELF'] == "/addexpcategory.php" ? "active" : ""); ?>">
-                  <a class="d-flex align-items-center" href="addexpcategory"><i data-feather="circle"></i>
-                    <span class="menu-item text-truncate" data-i18n="ExCat">Categories</span></a>
-                </li>
                 <li class="<?php echo ($_SERVER['PHP_SELF'] == "/addexpense.php" ? "active" : ""); ?>">
                   <a class="d-flex align-items-center" href="addexpense"><i data-feather="circle"></i>
                     <span class="menu-item text-truncate" data-i18n="AddE">Add Expense</span></a>

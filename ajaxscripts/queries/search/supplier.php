@@ -3,13 +3,8 @@ include('../../../config.php');
 include('../../../functions.php');
 
 $supplier = $_POST['supplier'];
-if ($supplier == "Others") {
-    $supplierid = 0;
-} else {
-    $supplierid = $supplier;
-}
 
-$getproducts = $mysqli->query("select * from products where supplier = '$supplierid' AND STATUS IS NULL ORDER BY productname");
+$getproducts = $mysqli->query("select * from products where supplier = '$supplier' AND STATUS IS NULL ORDER BY productname");
 
 ?>
 

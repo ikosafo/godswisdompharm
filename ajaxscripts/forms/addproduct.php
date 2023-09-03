@@ -64,7 +64,6 @@ $random = rand(1, 10) . date("Y-m-d");
   <div class="row">
     <div class="mb-1 col-md-4">
       <label class="form-label" for="supplier">Supplier</label>
-
       <input list="suppliers" id="supplier" class="form-control" placeholder="Enter or select a supplier" />
       <datalist id="suppliers">
         <?php
@@ -95,8 +94,6 @@ $random = rand(1, 10) . date("Y-m-d");
         }
         ?>
       </datalist>
-
-
     </div>
     <div class="mb-1 col-md-4">
       <label class="form-label" for="expirydate">Expiry Date</label>
