@@ -36,6 +36,14 @@ $theid = $resdetails['sysid'];
         </div>
         <div class="col-md-6 col-12">
             <div class="mb-1">
+                <label class="form-label" for="whatsapp">Whatsapp Number</label>
+                <input type="text" id="whatsapp" class="form-control" placeholder="Whatsapp" aria-label="whatsapp" required />
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter whatsapp number</div>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="mb-1">
                 <label class="form-label" for="emailaddress">Email Address</label>
                 <input type="email" id="emailaddress" class="form-control" placeholder="Email Address" aria-label="telephone" value="<?php echo $resdetails['emailaddress']; ?>" />
                 <div class="valid-feedback">Looks good!</div>
@@ -302,6 +310,7 @@ $theid = $resdetails['sysid'];
         var address = $("#address").val();
         var address = $("#address").val();
         var emailaddress = $("#emailaddress").val();
+        var whatsapp = $("#whatsapp").val();
         var sysconid = '<?php echo $random; ?>';
         var theid = '<?php echo $theid ?>';
 
@@ -343,6 +352,7 @@ $theid = $resdetails['sysid'];
                     tagline: tagline,
                     telephone: telephone,
                     emailaddress: emailaddress,
+                    whatsapp: whatsapp,
                     currency: currency,
                     address: address,
                     sysconid: sysconid,

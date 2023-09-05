@@ -7,6 +7,7 @@ $companyname = mysqli_real_escape_string($mysqli, $_POST['companyname']);
 $tagline = mysqli_real_escape_string($mysqli, $_POST['tagline']);
 $telephone = mysqli_real_escape_string($mysqli, $_POST['telephone']);
 $emailaddress = mysqli_real_escape_string($mysqli, $_POST['emailaddress']);
+$whatsapp = mysqli_real_escape_string($mysqli, $_POST['whatsapp']);
 $currency = mysqli_real_escape_string($mysqli, $_POST['currency']);
 $address = mysqli_real_escape_string($mysqli, $_POST['address']);
 $sysconid = mysqli_real_escape_string($mysqli, $_POST['sysconid']);
@@ -19,6 +20,7 @@ $saveconfig = $mysqli->query("UPDATE `system_config`
                             `tagline` = '$tagline',
                             `address` = '$address',
                             `emailaddress` = '$emailaddress',
+                            `whatsapp` = '$whatsapp',
                             `telephone` = '$telephone',
                             `currency` = '$currency' WHERE sysid = '$theid'");
 
