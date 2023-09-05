@@ -132,8 +132,16 @@ if (mysqli_num_rows($gettemp) == "0") {
             ?>
           </datalist>
         </div>
-
       </div>
+      <div class="mb-1 row">
+        <div class="col-sm-3">
+          <label class="col-form-label" for="customertel">Telephone</label>
+        </div>
+        <div class="col-sm-9">
+          <input type="text" id="customertel" class="form-control" autocomplete="off" placeholder="Enter telephone" />
+        </div>
+      </div>
+
       <div class="mb-1 row">
         <div class="col-sm-3">
           <label class="col-form-label" for="paymentmethod">Payment Method</label>
@@ -186,6 +194,7 @@ if (mysqli_num_rows($gettemp) == "0") {
     var change = $('#change').val();
     var customer = $('#customer').val();
     var paymentmethod = $('#paymentmethod').val();
+    var customertel = $('#customertel').val();
 
     var error = '';
 
@@ -217,7 +226,8 @@ if (mysqli_num_rows($gettemp) == "0") {
           change: change,
           newsaleid: '<?php echo $newsaleid; ?>',
           customer: customer,
-          paymentmethod: paymentmethod
+          paymentmethod: paymentmethod,
+          customertel: customertel
         },
         success: function(text) {
           // Reload the current page

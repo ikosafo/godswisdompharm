@@ -9,6 +9,8 @@ $change = mysqli_real_escape_string($mysqli, $_POST['change']);
 $newsaleid = mysqli_real_escape_string($mysqli, $_POST['newsaleid']);
 $customer = mysqli_real_escape_string($mysqli, $_POST['customer']);
 $paymentmethod = mysqli_real_escape_string($mysqli, $_POST['paymentmethod']);
+$customertel = mysqli_real_escape_string($mysqli, $_POST['customertel']);
+
 
 $getquantity = $mysqli->query("select * from tempsales where genid = '$newsaleid'");
 while ($resquantity = $getquantity->fetch_assoc()) {
@@ -41,6 +43,7 @@ if (mysqli_num_rows($checkforsaleid) == "1") {
     `newsaleid`,
     `customer`,
     `paymentmethod`,
+    `telephone`,
     `username`,
     `datetime`)
         VALUES (
@@ -50,6 +53,7 @@ if (mysqli_num_rows($checkforsaleid) == "1") {
     '$newsaleid',
     '$customer',
     '$paymentmethod',
+    '$customertel',
     '$username',
     '$datetime')");
 

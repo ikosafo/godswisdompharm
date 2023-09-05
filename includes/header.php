@@ -209,7 +209,7 @@ function getCompNameHeader($text)
           </div>
         </li>
 
-        <li class="nav-item dropdown dropdown-notification me-25">
+        <!--   <li class="nav-item dropdown dropdown-notification me-25">
           <a class="nav-link" href="#" data-bs-toggle="dropdown">
             <i class="ficon" data-feather="bell"></i>
             <span class="badge rounded-pill bg-danger badge-up">0</span></a>
@@ -231,7 +231,7 @@ function getCompNameHeader($text)
             </li>
             <li class="dropdown-menu-footer"><a class="btn btn-primary w-100" href="#">Read all notifications</a></li>
           </ul>
-        </li>
+        </li> -->
         <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">
                 🎉 Welcome <span style="text-transform: uppercase;"><?php echo $username; ?></span>
